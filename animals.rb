@@ -13,6 +13,10 @@ class Animal
   end
 
   def speak
-    "Bla bla bla"
+    if @type == "dog"
+      "Woof, woof"
+    elsif @type == "spider"
+      "..."
+    end
   end
 end

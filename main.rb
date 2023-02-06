@@ -10,3 +10,6 @@ p animal_2 = Animal.new("cat", 8)
 p animal_2.name
 p animal_2.name = "Fluffy"
 p animal_2.name
+
+p animal_1.speak()
+p animal_2.speak()
