@@ -19,3 +19,14 @@ p alex.animals.map(&:name)
 p alex.animals.count
 p alex.animals.first.name
 p alex.animals.first.number_of_legs
+
+second_animal = Animal.new('cat', 4, 'Kitty')
+second_animal.owner
+p alex.animals.count
+
+second_animal.owner = alex
+
+second_animal.owner
+p alex.animals.count
+alex.animals.last
+p alex.animals.last.name
