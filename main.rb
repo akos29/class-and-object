@@ -1,12 +1,31 @@
-require "./animals.rb"
+require './animals'
+require './dog'
+require './spider'
+require './owner'
+require './visit'
+require './vet'
 
-p animal_1 = Animal.new("dog", 4, "Rex")
-p animal_1.id
-p animal_1.type
-p animal_1.name
-p animal_1.number_of_legs
+dog = Dog.new('black', 'Rax')
+spider = Spider.new(85, 'Bob')
 
-p animal_2 = Animal.new("cat", 8)
-p animal_2.name
-p animal_2.name = "Fluffy"
-p animal_2.name
+vet_maria = Vet.new('Maria', 'New York')
+vet_john = Vet.new('John', 'San Francisco')
+
+Visit.new('2017-12-22', dog, vet_maria)
+Visit.new('2017-12-31', dog, vet_maria)
+
+p dog.visits.count
+p dog.visits.map(&:date)
+p vet_john.visits.count
+p vet_maria.visits.count
+p vet_maria.visits.map { |visit| visit.animal.name }
+
+visit3 = Visit.new('2017-11-11', spider, vet_john)
+visit4 = Visit.new('2017-10-10', spider, vet_maria)
+
+p spider.visits.count
+p spider.visits.map(&:date)
+p vet_john.visits.count
+p vet_john.visits.map { |visit| visit.animal.name }
+p vet_maria.visits.count
+p vet_maria.visits.map { |visit| visit.animal.name }
